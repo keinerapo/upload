@@ -1,0 +1,9 @@
+<input class="file-upload" type="file" accept="*" (change)="handleFileInput($event.target.files[0])">
+<button class="btn-success" type="submit" *ngIf="uFile" (click)="setFiles()">Save</button>
+<br>
+<br>
+<div class="grid-container" *ngIf="fileArray.length > 0">
+  <div>
+      <app-download *ngFor="let fi of fileArray" [file]="fi"></app-download>
+  </div>
+</div>
